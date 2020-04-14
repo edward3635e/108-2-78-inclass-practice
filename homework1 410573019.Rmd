@@ -90,6 +90,18 @@ List of 2
 
 ```{r ans31}
 # course
+library(lubridate)
+`小明修課清單` <-list(
+  approve="已核準"
+  coursename="會計學"
+  type="必"
+  credits="3"
+  weekday="星期三"
+  time_slots="7,8,9"
+  classroom=商2F05")
+
+print(`小明修課清單`)
+    
 ```
 
 ### 3.2
@@ -102,6 +114,17 @@ List of 2
 
 ```{r ans32}
 # courseUpdate
+library(lubridate)
+`小明修課清單` <-list(
+  approve="已核準"
+  coursename="會計學"
+  type="必"
+  credits="3"
+  weekday=("星期二","星期三")
+  time_slots=("5",",7 8 9")
+  classroom=商2F05")
+
+print(`小明修課清單`)
 ```
 
 ### 3.3
@@ -147,22 +170,35 @@ fiveReceipts <- .randomReceipts(n=5)
 
 ```{r ans41}
 # levels_fiveReceipts
+levels(fiveReceipts)
+object1 <- c(5,3,2,1,4,6,7,8,9,10)
+save(object1, file="fiveReceipts")
 ```
 ### 4.2
 使用as.integer()函數來顯示fiveReceipts在電腦的存法，並把回傳的結果值存在storage_fiveReceipts. 
 ```{r ans42}
 # storage_fiveReceipts
+as.integer(fiveReceipts)
+object1 <- c(9,8,4,4,4)
+save(object1, file="fiveReceipts")
 ```
 
 ### 4.3
 使用as.character()函數將fiveReceipts在螢幕顯示的表面值改成字串，並把回傳的結果值存在chr_fiveReceipts.
 ```{r ans43}
 # chr_fiveReceipts
+as.character(fiveReceipts)
+object1 <- c(9,8,1,1,1)
+save(object1, file="fiveReceipts")
 ```
 ### 4.4
 若我們想要把fiveReceipts的螢幕顯示值用sum()函數加總，在只使用as.{class name}函數下，要怎麼做？把sum完的結果存在sum_fiveReceipts。
 ```{r ans44}
 # sum_fiveReceipts
+as.character(fiveReceipts)
+object1 <- c(9L,8L,1L,1L,1L)
+save(object1, file="fiveReceipts")
+sum(object1)
 ```
 
 ## 5
@@ -179,17 +215,19 @@ source("https://www.dropbox.com/s/xtge2ghfb7dhple/108-2-hw1-4.R?dl=1")
   * 找出有錯誤的行，直接把它更正，更正時不要隨意斷句徒增新行。
 
 ```{r ans5c, eval=F}
-yy <- 2020
-mm <- `Mar.`
-dd <- 15
+list(
+yy = c(2020)
+mm = c(`Mar.`)
+dd = c(15)
 event_list <- list(
-  time=ymd(paste0(yy,",",mm,dd)),
+  time=ymd(paste0(yy,mm,dd)),
   list(
     name="小明",
     `是否完成`=True,
     完成所花時間(秒)=350,
     tools=c(
       "anchor","axe")
+)
 )
 ```
 
