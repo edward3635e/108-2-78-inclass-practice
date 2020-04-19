@@ -53,6 +53,10 @@ fromJSON("https://www.dropbox.com/s/uday7x99k9q9sxm/course.json?dl=1", simplifyD
 請取出course中time_place的資料儲存到叫做time_place的list物件。
 ```{r ans21}
 # time_place
+
+"time_place" <- course[course$time_place]
+save(time_place,file="time_place")
+
 ```
 
 ### 2.2 特定物件改寫
@@ -70,12 +74,16 @@ fromJSON("https://www.dropbox.com/s/uday7x99k9q9sxm/course.json?dl=1", simplifyD
 只有type不一樣，其他內容都和course一樣喔!至於approve正確的class是甚麼請查看其內容自行判斷。
 ```{r ans22}
 # course_update
+course[["必"]] <- "選"
+list(course)
 ```
 
 ### 2.3 新增特定物件
 系辦決定在修課資料加上授課教師的名字，請在course_update的course資料中新增teacher欄位，授課教師是紀學檜老師，把改完的結果存到course_update2。
 ```{r ans23}
 # course_update2
+course[["teacher"]] <- "紀學檜"
+courseupdate2 <- list(course)
 ```
 
 ## 3 「應用題」一起成為神奇寶貝大師(或者洛托姆)吧!
@@ -110,6 +118,11 @@ List of 9
 ```
 ```{r ans31}
 # Pikachu
+length(Gamemaster)
+"pokemon" <- Gamemaster[["pokemon"]]
+"pikachu" <- pokemon[[27]]
+str("Pikachu")
+
 ```
 
 ### 3.2 特定物件取出&class調整
@@ -119,6 +132,11 @@ List of 9
 記得class怎麼改嗎?vector內容請按照「atk、def、hp」這樣的順序喔。
 ```{r ans32}
 # Pikachu_stats
+length(pikachu)
+pikachu[c(4)]
+class(numeric())
+pikachu_status <- c(112,96,111)
+
 ```
 
 ### 3.3 特定物件改寫&特定物件取出
@@ -127,6 +145,11 @@ List of 9
 
 ```{r ans33}
 # Jigglypuff
+
+"pokemon" <- Gamemaster[["pokemon"]]
+"Jigglypuff" <- pokemon[[46]]
+Jigglypuff[["Pudding"]] <- "Jigglypuff"
+
 ```
 
 ### 3.4 魔王題——考驗自己有沒有成為程式設計大師/洛托姆的時候到了
@@ -146,6 +169,16 @@ List of 9
 注意Mimikyu的各種資料格式都應該要跟Pikachu、Jigglypuff他們一樣喔。
 ```{r ans34}
 # Gamemaster
+"mimikyu" <- list(
+  speciesName= "Mimikyu",
+  speciesId= "mimikyu",
+  baseStats <- list(atk= "112", def= "96", hp= "111"),
+  types= c("ghost", "fairy"),
+  fastMoves= c("FEINT_ATTACK", "POUND"),
+  chargedMoves= c("Dazzling Glem", "Disarming_Voice", "Gyro_Ball", "Play_Rough"),
+  legacyMoves= c("BODY_SLAM",  "PLAY_ROUGH"),
+  defaulIVs <- list(c(cp1500= "40,15,15,15", cp2500= "40,15,15,15"))
+                         )
 ```
 
 # 恭喜你寫完了!最後記得回去檢查注意事項有沒有都做到，避免被白扣分喔~
