@@ -34,6 +34,10 @@ library(readr); library(stringr); library(purrr); library(magrittr); library(lub
 立方體的表面積計算方式為六個面的面積加總，請計算長寬高分別為20,10,15的立方體A的表面積，並將結果存到surface_A(class integer)。
 ```{r ans11}
 # surface_A
+
+
+
+
 ```
 
 ### 1.2 立方體表面積計算機
